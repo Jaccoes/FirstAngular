@@ -1,15 +1,13 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Joke} from "../JokeListComp/app.JokeListComp.component";
 
 @Component({
-  selector: 'JokesComp',
+  selector: 'JokeComp',
   templateUrl: './app.JokesComp.component.html',
   styleUrls: ['./app.JokesComp.component.css']
 })
-export class JokesComp {
-  private myVar = 'JacButton';
 
-  private myFunction() {
-    alert("Alert!!");
-  }
-
+export class JokeComp {
+  @Input('Joke') data: Joke;
 }
+

@@ -1,4 +1,5 @@
-<div class="row text-center">
-  <h1>What did the cheese say when it looked in the mirror?</h1>
-  <div>Halloumi (hello me)</div>
+<div class="card card-block mx-auto">
+  <h4 class="card-title">{{data.setup}}</h4>
+  <button (click)="data.toggle()">Tell me!</button>
+  <p class="card-text" [hidden]="data.hide">{{data.punchline}}</p>
 </div>
