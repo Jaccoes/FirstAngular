@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Joke} from "../JokeListComp/app.JokeListComp.component";
 
 @Component({
@@ -9,5 +9,10 @@ import {Joke} from "../JokeListComp/app.JokeListComp.component";
 
 export class JokeComp {
   @Input('Joke') data: Joke;
-}
 
+  @Output() emitJokeDeleted = new EventEmitter<Joke>();
+
+  deleteJoke(Joke) {
+    this.emitJokeDeleted.emit(Joke)
+  }
+}

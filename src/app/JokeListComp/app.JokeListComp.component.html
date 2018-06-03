@@ -1,2 +1,2 @@
-<JokeForm (jokeCreated)="addJoke($event)"></JokeForm>
-<JokeComp class="row" *ngFor="let j of jokes" [Joke]="j"></JokeComp>
+<JokeForm (emitJokeCreated)="addJoke($event)"></JokeForm>
+<JokeComp class="row" *ngFor="let j of jokes" [Joke]="j" (emitJokeDeleted)="deleteJoke($event)"></JokeComp>

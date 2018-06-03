@@ -8,14 +8,20 @@ import { JokeComp } from "src/app/JokesComp/app.JokesComp.component";
   styleUrls: ['./app.JokeListComp.component.css']
 })
 export class JokeListComp {
-  jokes: Joke[];
+  jokes: Joke[] = [];
 
   constructor() {
-/*    this.jokes = [
-      new Joke("What did the cheese say when it looked in the mirror?","Hello-Me (Halloumi)"),
-      new Joke("What kind of cheese do you use to disguise a small horse?","Mask-a-pony (Mascarpone)"),
-      new Joke("A kid threw a lump of cheddar at me","I thought ‘That’s not very mature’")
-    ];*/
+  }
+
+  addJoke(Joke) {
+    this.jokes.push(Joke);
+  }
+
+  deleteJoke(Joke) {
+    let indexToDelete = this.jokes.indexOf(Joke);
+    if(indexToDelete !== -1) {
+      this.jokes.splice(indexToDelete,1)
+    }
   }
 }
 
@@ -34,3 +40,4 @@ export class Joke {
     this.hide = !this.hide;
   }
 }
+

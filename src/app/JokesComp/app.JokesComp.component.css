@@ -4,6 +4,7 @@
   width: 22rem;
 }
 
-div > p {
-  text-align: center;
+.buttons {
+  margin-left: 10px;
+  margin-right: 10px;
 }

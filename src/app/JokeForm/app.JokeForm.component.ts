@@ -8,6 +8,9 @@ import {Joke} from "../JokeListComp/app.JokeListComp.component";
 })
 
 export class JokeFormComp {
+  @Output() emitJokeCreated = new EventEmitter<Joke>();
 
-  @Output() jokeCreated = new EventEmitter<Joke>();
+  createJoke(setup:string, punchline:string) {
+    this.emitJokeCreated.emit(new Joke(setup, punchline));
+  }
 }
